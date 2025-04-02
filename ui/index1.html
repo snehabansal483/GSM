@@ -68,14 +68,14 @@
             var password = $('#loginPassword').val();
             
             $.ajax({
-                url: 'http://127.0.0.1:5000/login',
+                url: 'https://gsm-3okg.onrender.com/login',
                 type: 'POST',
                 contentType: 'application/json',
                 data: JSON.stringify({ username: username, password: password }),
                 success: function(response) {
                     alert('Login successful!');
                     localStorage.setItem('token', response.token);
-                    window.location.href = 'index.html';
+                    window.location.href = 'home.html';
                 },
                 error: function() {
                     alert('Invalid credentials!');
@@ -88,7 +88,7 @@
             var password = $('#registerPassword').val();
             
             $.ajax({
-                url: 'http://127.0.0.1:5000/register',
+                url: 'https://gsm-3okg.onrender.com/register',
                 type: 'POST',
                 contentType: 'application/json',
                 data: JSON.stringify({ username: username, password: password }),
