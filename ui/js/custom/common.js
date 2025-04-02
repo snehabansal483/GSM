@@ -1,10 +1,10 @@
 // Define your api here
-var productListApiUrl = 'http://127.0.0.1:5000/getProducts';
-var uomListApiUrl = 'http://127.0.0.1:5000/getUOM';
-var productSaveApiUrl = 'http://127.0.0.1:5000/insertProduct';
-var productDeleteApiUrl = 'http://127.0.0.1:5000/deleteProduct';
-var orderListApiUrl = 'http://127.0.0.1:5000/getAllOrders';
-var orderSaveApiUrl = 'http://127.0.0.1:5000/insertOrder';
+var productListApiUrl = 'https://gsm-3okg.onrender.com/getProducts';
+var uomListApiUrl = 'https://gsm-3okg.onrender.com/getUOM';
+var productSaveApiUrl = 'https://gsm-3okg.onrender.com/insertProduct';
+var productDeleteApiUrl = 'https://gsm-3okg.onrender.com/deleteProduct';
+var orderListApiUrl = 'https://gsm-3okg.onrender.com/getAllOrders';
+var orderSaveApiUrl = 'https://gsm-3okg.onrender.com/insertOrder';
 
 // For product drop in order
 var productsApiUrl = 'https://fakestoreapi.com/products';
