@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-from sql_connection import get_sql_connection
+from backend.sql_connection import get_sql_connection
 import json
 import products_dao
 import orders_dao
