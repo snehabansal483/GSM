@@ -1,5 +1,4 @@
 from flask import Flask, request, jsonify
-from configuration import token_required
 from sql_connection import get_sql_connection
 import json
 import products_dao
