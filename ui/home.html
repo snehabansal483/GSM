@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery Store Management - Login/Register</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <style>
+        body {
+            background: url('https://source.unsplash.com/1600x900/?grocery,store') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .auth-container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            width: 100%;
+        }
+        .toggle-link { cursor: pointer; color: blue; text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="auth-container">
+        <h3 class="text-center">Welcome to Grocery Store Management</h3>
+        <div id="loginForm">
+            <h4 class="text-center">Login</h4>
+            <div class="mb-3">
+                <label for="loginUsername" class="form-label">Username</label>
+                <input type="text" class="form-control" id="loginUsername" required>
+            </div>
+            <div class="mb-3">
+                <label for="loginPassword" class="form-label">Password</label>
+                <input type="password" class="form-control" id="loginPassword" required>
+            </div>
+            <button class="btn btn-primary w-100" onclick="loginUser()">Login</button>
+            <p class="text-center mt-3">Don't have an account? <span class="toggle-link" onclick="toggleForms()">Register</span></p>
+        </div>
+        
+        <div id="registerForm" style="display: none;">
+            <h4 class="text-center">Register</h4>
+            <div class="mb-3">
+                <label for="registerUsername" class="form-label">Username</label>
+                <input type="text" class="form-control" id="registerUsername" required>
+            </div>
+            <div class="mb-3">
+                <label for="registerPassword" class="form-label">Password</label>
+                <input type="password" class="form-control" id="registerPassword" required>
+            </div>
+            <button class="btn btn-success w-100" onclick="registerUser()">Register</button>
+            <p class="text-center mt-3">Already have an account? <span class="toggle-link" onclick="toggleForms()">Login</span></p>
+        </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function toggleForms() {
+            $('#loginForm').toggle();
+            $('#registerForm').toggle();
+        }
+
+        function loginUser() {
+            var username = $('#loginUsername').val();
+            var password = $('#loginPassword').val();
+            
+            $.ajax({
+                url: 'http://127.0.0.1:5000/login',
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify({ username: username, password: password }),
+                success: function(response) {
+                    alert('Login successful!');
+                    localStorage.setItem('token', response.token);
+                    window.location.href = 'index.html';
+                },
+                error: function() {
+                    alert('Invalid credentials!');
+                }
+            });
+        }
+
+        function registerUser() {
+            var username = $('#registerUsername').val();
+            var password = $('#registerPassword').val();
+            
+            $.ajax({
+                url: 'http://127.0.0.1:5000/register',
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify({ username: username, password: password }),
+                success: function(response) {
+                    alert('Registration successful! Please login.');
+                    toggleForms();
+                },
+                error: function() {
+                    alert('Registration failed! Try again.');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
