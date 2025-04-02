@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Documentation | Grocery Management System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        .endpoint-card {
+            border-left: 4px solid #198754;
+        }
+        .method-get {
+            color: #0d6efd;
+        }
+        .method-post {
+            color: #198754;
+        }
+        .method-put {
+            color: #fd7e14;
+        }
+        .method-delete {
+            color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation (same as index.html) -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="bi bi-shop"></i> Grocery Manager
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="features.html">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="documentation.html">API Docs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="demo.html">Live Demo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://github.com/snehabansal483/GSM" target="_blank">
+                            <i class="bi bi-github"></i> GitHub
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="bg-light py-5">
+        <div class="container text-center">
+            <h1 class="display-5 fw-bold">API Documentation</h1>
+            <p class="lead">Complete reference for the Grocery Management System REST API</p>
+        </div>
+    </header>
+
+    <!-- Documentation Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <div class="sticky-top pt-3" style="top: 80px;">
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-header bg-success text-white">
+                                <h5 class="mb-0">API Endpoints</h5>
+                            </div>
+                            <div class="list-group list-group-flush">
+                                <a href="#authentication" class="list-group-item list-group-item-action">Authentication</a>
+                                <a href="#products" class="list-group-item list-group-item-action">Products</a>
+                                <a href="#orders" class="list-group-item list-group-item-action">Orders</a>
+                                <a href="#uom" class="list-group-item list-group-item-action">Units of Measure</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <!-- Introduction -->
+                    <div class="mb-5">
+                        <h2 class="mb-4">Introduction</h2>
+                        <p>The Grocery Management System provides a RESTful API for programmatic access to all system functionality. All API endpoints require authentication except for the login and registration endpoints.</p>
+                        
+                        <div class="alert alert-info">
+                            <h5><i class="bi bi-info-circle"></i> Base URL</h5>
+                            <code><a href="https://grocerymanage.netlify.app/" target="_blank">https://grocerymanage.netlify.app/</a></code>
+                        </div>
+                        
+                        
+                        <h4 class="mt-4">Authentication</h4>
+                        <p>Most endpoints require a JWT token for authentication. Include the token in the Authorization header:</p>
+                        <pre><code>Authorization: Bearer YOUR_JWT_TOKEN</code></pre>
+                    </div>
+
+                   <!-- Authentication -->
+<div id="authentication" class="mb-5">
+    <h2 class="mb-4">Authentication</h2>
+    
+    <!-- Register -->
+    <div class="card mb-4 endpoint-card">
+        <div class="card-header d-flex justify-content-between align-items-center">
+            <span class="badge bg-success rounded-pill">POST</span>
+            <code>/register</code>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Register new user</h5>
+            <p class="card-text">Create a new user account with username and password.</p>
+            
+            <h6 class="mt-3">Request Body</h6>
+            <pre><code>{
+    "username": "newuser",
+    "password": "securepassword123"
+}</code></pre>
+            
+            <h6 class="mt-3">Response (Success)</h6>
+            <pre><code>{
+    "user_id": 42,
+    "message": "User registered successfully"
+}</code></pre>
+            
+            <h6 class="mt-3">Possible Errors</h6>
+            <pre><code>{
+    "error": "Username and password are required"
+} (Status: 400)</code></pre>
+        </div>
+    </div>
+    
+    <!-- Login -->
+    <div class="card mb-4 endpoint-card">
+        <div class="card-header d-flex justify-content-between align-items-center">
+            <span class="badge bg-success rounded-pill">POST</span>
+            <code>/login</code>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">User login</h5>
+            <p class="card-text">Authenticate and receive a JWT token valid for 2 hours.</p>
+            
+            <h6 class="mt-3">Request Body</h6>
+            <pre><code>{
+    "username": "existinguser",
+    "password": "securepassword123"
+}</code></pre>
+            
+            <h6 class="mt-3">Response (Success)</h6>
+            <pre><code>{
+    "message": "Login successful",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+    "user_id": 42
+}</code></pre>
+            
+            <h6 class="mt-3">Possible Errors</h6>
+            <pre><code>{
+    "error": "Username and password are required"
+} (Status: 400)
+
+{
+    "error": "Invalid username or password"
+} (Status: 401)</code></pre>
+            
+            <div class="alert alert-info mt-3">
+                <strong>Note:</strong> Include this token in the <code>Authorization</code> header for protected routes:
+                <pre class="mt-2">Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...</pre>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Products -->
+<div id="products" class="mb-5">
+    <h2 class="mb-4">Products</h2>
+    
+    <!-- Get Products -->
+    <div class="card mb-4 endpoint-card">
+        <div class="card-header d-flex justify-content-between align-items-center">
+            <span class="badge bg-primary rounded-pill">GET</span>
+            <code>/getProducts</code>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Get all products</h5>
+            <p class="card-text">Retrieve a list of all products in the inventory.</p>
+            
+            <h6 class="mt-3">Headers</h6>
+            <pre><code>Authorization: Bearer YOUR_JWT_TOKEN</code></pre>
+            
+            <h6 class="mt-3">Response (Success)</h6>
+            <pre><code>[
+{
+      "name": "rice",
+       "price_per_unit": 40,
+      "product_id": 1,
+      "uom_id": 2,
+      "uom_name": "kg"
+},
+{
+      "name": "toothpaste",
+      "price_per_unit": 30,
+      "product_id": 2,
+      "uom_id": 1,
+      "uom_name": "each"
+},
+{
+      "name": "Wheat",
+      "price_per_unit": 40,
+      "product_id": 3,
+      "uom_id": 2,
+      "uom_name": "kg"
+}               
+]</code></pre>
+        </div>
+    </div>
+    
+    <!-- Insert Product -->
+    <div class="card mb-4 endpoint-card">
+        <div class="card-header d-flex justify-content-between align-items-center">
+            <span class="badge bg-success rounded-pill">POST</span>
+            <code>/insertProduct</code>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Add new product</h5>
+            <p class="card-text">Add a new product to the inventory.</p>
+            
+            <h6 class="mt-3">Headers</h6>
+            <pre><code>Authorization: Bearer YOUR_JWT_TOKEN
+Content-Type: multipart/form-data</code></pre>
+            
+            <h6 class="mt-3">Request Body (form-data)</h6>
+            <pre><code>data={
+            "product_name": "Bananas",
+            "unit": "kg",
+            "price_per_unit": 35
+            }</code></pre>
+            
+            <h6 class="mt-3">Response (Success)</h6>
+            <pre><code>{
+    "product_id": 42
+}</code></pre>
+        </div>
+    </div>
+    
+    <!-- Delete Product -->
+    <div class="card mb-4 endpoint-card">
+        <div class="card-header d-flex justify-content-between align-items-center">
+            <span class="badge bg-danger rounded-pill">POST</span>
+            <code>/deleteProduct</code>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Remove product</h5>
+            <p class="card-text">Remove a product from the inventory.</p>
+            
+            <h6 class="mt-3">Headers</h6>
+            <pre><code>Authorization: Bearer YOUR_JWT_TOKEN
+Content-Type: multipart/form-data</code></pre>
+            
+            <h6 class="mt-3">Request Body (form-data)</h6>
+            <pre><code>{
+    "product_id": "42"
+}</code></pre>
+            
+            <h6 class="mt-3">Response (Success)</h6>
+            <pre><code>{
+    "product_id": 42
+}</code></pre>
+        </div>
+    </div>
+</div>
+
+<!-- Orders -->
+<div id="orders" class="mb-5">
+    <h2 class="mb-4">Orders</h2>
+    
+    <!-- Get Orders -->
+    <div class="card mb-4 endpoint-card">
+        <div class="card-header d-flex justify-content-between align-items-center">
+            <span class="badge bg-primary rounded-pill">GET</span>
+            <code>/getAllOrders</code>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Get all orders</h5>
+            <p class="card-text">Retrieve a list of all orders with their details.</p>
+            
+            <h6 class="mt-3">Headers</h6>
+            <pre><code>Authorization: Bearer YOUR_JWT_TOKEN</code></pre>
+            
+            <h6 class="mt-3">Response (Success)</h6>
+            <pre><code>
+[
+"customer_name": "Sneha",
+{
+        "datetime": "Wed, 02 Apr 2025 00:00:00 GMT",
+         "order_details": [
+            {
+                "order_id": 1,
+                "price_per_unit": 40,
+                "product_name": "rice",
+                "quantity": 2,
+                "total_price": 80
+            }
+            ],
+        "order_id": 1,
+        "total": 300
+        },
+{
+"customer_name": "Tanya",
+        "datetime": "Wed, 02 Apr 2025 11:12:17 GMT",
+        "order_details": [
+            {
+                "order_id": 2,
+                "price_per_unit": 30,
+                "product_name": "toothpaste",
+                "quantity": 1,
+                "total_price": 30
+        }
+          ],
+        "order_id": 2,
+        "total": 30
+        },
+{
+"customer_name": "Aditya",
+        "datetime": "Wed, 02 Apr 2025 07:51:37 GMT",
+        "order_details": [
+            {
+                  "order_id": 3,
+                  "price_per_unit": 40,
+                  "product_name": "Wheat",
+                  "quantity": 1,
+                  "total_price": 40
+            }
+              ],
+        "order_id": 3,
+        "total": 40
+        }   
+]
+        
+</code></pre>
+        </div>
+    </div>
+    
+    <!-- Create Order -->
+    <div class="card mb-4 endpoint-card">
+        <div class="card-header d-flex justify-content-between align-items-center">
+            <span class="badge bg-success rounded-pill">POST</span>
+            <code>/insertOrder</code>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Create new order</h5>
+            <p class="card-text">Create a new order with multiple products.</p>
+            
+            <h6 class="mt-3">Headers</h6>
+            <pre><code>Authorization: Bearer YOUR_JWT_TOKEN
+Content-Type: multipart/form-data</code></pre>
+            
+            <h6 class="mt-3">Request Body (form-data)</h6>
+        <pre><code>{
+        "product": "Wheat"
+        "price": 40,
+        "quantity": 1,
+        "total-cost": 230.00 Rs 
+}</code></pre>
+            
+            <h6 class="mt-3">Response (Success)</h6>
+            <pre><code>{
+    "order_id": 102
+}</code></pre>
+        </div>
+    </div>
+</div>
+
+<!-- UOM -->
+<div id="uom">
+    <h2 class="mb-4">Units of Measure</h2>
+    
+    <!-- Get UOM -->
+    <div class="card endpoint-card">
+        <div class="card-header d-flex justify-content-between align-items-center">
+            <span class="badge bg-primary rounded-pill">GET</span>
+            <code>/getUOM</code>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Get all units of measure</h5>
+            <p class="card-text">Retrieve a list of all available units of measure.</p>
+            
+            <h6 class="mt-3">Headers</h6>
+            <pre><code>Authorization: Bearer YOUR_JWT_TOKEN</code></pre>
+            
+            <h6 class="mt-3">Response (Success)</h6>
+            <pre><code>[
+    {
+        "uom_id": 1,
+        "uom_name": "each"
+    },
+    {
+        "uom_id": 2,
+        "uom_name": "kg"
+    }
+]</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (same as index.html) -->
+    <footer class="py-4 bg-dark text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5><i class="bi bi-shop"></i> Grocery Management System</h5>
+                    <p class="text-muted">A full-stack solution for modern grocery stores.</p>
+                </div>
+                <div class="col-md-3">
+                    <h5>Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-decoration-none text-muted">Home</a></li>
+                        <li><a href="features.html" class="text-decoration-none text-muted">Features</a></li>
+                        <li><a href="documentation.html" class="text-decoration-none text-muted">API Docs</a></li>
+                        <li><a href="demo.html" class="text-decoration-none text-muted">Live Demo</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Contact</h5>
+                    <ul class="list-unstyled text-muted">
+                        <li class="mb-2">
+                            <a href="mailto:snehabansal481@gmail.com" class="text-white-50">
+                                <i class="bi bi-envelope me-2"></i>snehabansal481@gmail.com
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/snehabansal483" target="_blank" class="text-white-50">
+                                <i class="bi bi-github me-2"></i>Sneha Bansal
+                            </a>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4 bg-secondary">
+            <div class="text-center text-muted">
+                <small>© 2025 Grocery Management System. All rights reserved.</small>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

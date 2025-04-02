@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery Management System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="bi bi-shop"></i> Grocery Manager
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="features.html">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="documentation.html">API Docs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="demo.html">Live Demo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://github.com/snehabansal483/GSM" target="_blank">
+                            <i class="bi bi-github"></i> GitHub
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section bg-light py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-4">Modern Grocery Management System</h1>
+                    <p class="lead mb-4">A full-stack web application for managing grocery store inventory, orders, and user accounts with Flask backend and Bootstrap frontend.</p>
+                    <div class="d-flex gap-3">
+                        <a href="demo.html" class="btn btn-success btn-lg px-4">
+                            <i class="bi bi-play-circle"></i> Live Demo
+                        </a>
+                        <a href="https://github.com/snehabansal483/GSM" class="btn btn-outline-success btn-lg px-4" target="_blank">
+                            <i class="bi bi-code-slash"></i> View Code
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="images/dashboard-screenshot.png" alt="Grocery Management System Dashboard" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Features Preview -->
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Key Features</h2>
+                <p class="text-muted">Everything you need to manage your grocery store efficiently</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="icon-box bg-success bg-opacity-10 text-success mb-4">
+                                <i class="bi bi-person-check fs-3"></i>
+                            </div>
+                            <h5>User Authentication</h5>
+                            <p class="text-muted">Secure user registration and login with session management</p>
+                            <a href="features.html#authentication" class="btn btn-link text-success text-decoration-none">Learn more →</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="icon-box bg-success bg-opacity-10 text-success mb-4">
+                                <i class="bi bi-box-seam fs-3"></i>
+                            </div>
+                            <h5>Inventory Management</h5>
+                            <p class="text-muted">Add, view, and remove products from your inventory</p>
+                            <a href="features.html#inventory" class="btn btn-link text-success text-decoration-none">Learn more →</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="icon-box bg-success bg-opacity-10 text-success mb-4">
+                                <i class="bi bi-cart-check fs-3"></i>
+                            </div>
+                            <h5>Order Processing</h5>
+                            <p class="text-muted">Create new orders and view complete order history</p>
+                            <a href="features.html#orders" class="btn btn-link text-success text-decoration-none">Learn more →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="features.html" class="btn btn-outline-success">View All Features</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technologies -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Technologies Used</h2>
+                <p class="text-muted">Modern tech stack for robust performance</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-3 col-6 text-center">
+                    <div class="p-3">
+                        <img src="images/flask-logo.png" alt="Flask" class="tech-logo mb-3">
+                        <h6>Python Flask</h6>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 text-center">
+                    <div class="p-3">
+                        <img src="images/mysql-logo.png" alt="MySQL" class="tech-logo mb-3">
+                        <h6>MySQL</h6>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 text-center">
+                    <div class="p-3">
+                        <img src="images/bootstrap-logo.png" alt="Bootstrap" class="tech-logo mb-3">
+                        <h6>Bootstrap 5</h6>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 text-center">
+                    <div class="p-3">
+                        <img src="images/github-actions-logo.png" alt="GitHub Actions" class="tech-logo mb-3">
+                        <h6>GitHub Actions</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-5 bg-success text-white">
+        <div class="container text-center">
+            <h2 class="fw-bold mb-4">Ready to streamline your grocery management?</h2>
+            <p class="lead mb-4">Try our live demo or deploy your own instance today.</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="demo.html" class="btn btn-light btn-lg px-4">
+                    <i class="bi bi-play-circle"></i> Live Demo
+                </a>
+                <a href="https://github.com/snehabansal483/GSM" class="btn btn-outline-light btn-lg px-4" target="_blank">
+                    <i class="bi bi-github"></i> GitHub Repo
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4 bg-dark text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5><i class="bi bi-shop"></i> Grocery Management System</h5>
+                    <p class="text-muted">A full-stack solution for modern grocery stores.</p>
+                </div>
+                <div class="col-md-3">
+                    <h5>Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-decoration-none text-muted">Home</a></li>
+                        <li><a href="features.html" class="text-decoration-none text-muted">Features</a></li>
+                        <li><a href="documentation.html" class="text-decoration-none text-muted">API Docs</a></li>
+                        <li><a href="demo.html" class="text-decoration-none text-muted">Live Demo</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Contact</h5>
+                    <ul class="list-unstyled text-muted">
+                        <a href="mailto:snehabansal481@gmail.com" class="text-white-50">
+                            <i class="bi bi-envelope me-2"></i>snehabansal481@gmail.com
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/snehabansal483" target="_blank" class="text-white-50">
+                            <i class="bi bi-github me-2"></i>Sneha Bansal
+                        </a>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4 bg-secondary">
+            <div class="text-center text-muted">
+                <small>© 2025 Grocery Management System. All rights reserved.</small>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

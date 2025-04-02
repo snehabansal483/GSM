@@ -1,0 +1,162 @@
+/* Custom CSS for Grocery Management System Website */
+
+/* Base Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #f8f9fa;
+}
+
+/* Navbar */
+.navbar-brand {
+    font-weight: 600;
+}
+
+/* Hero Section */
+.hero-section {
+    background-color: #f8f9fa;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+/* Icon Box */
+.icon-box {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+}
+
+/* Tech Logos */
+.tech-logo {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.tech-logo:hover {
+    transform: scale(1.1);
+}
+
+/* Feature Cards */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 12px;
+    border: none;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* API Documentation */
+.endpoint-card {
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    background-color: white;
+    border-left: 4px solid #0d6efd;
+}
+
+pre {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    overflow-x: auto;
+    border: 1px solid #dee2e6;
+}
+
+/* Demo Platforms */
+.demo-platforms .icon-box {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+}
+
+/* Contact Section */
+.contact-section li {
+    margin-bottom: 0.5rem;
+}
+
+.contact-section a {
+    color: #6c757d !important;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+}
+
+.contact-section a:hover {
+    color: #0d6efd;
+}
+
+.contact-section i {
+    margin-right: 0.5rem;
+    font-size: 1.1rem;
+}
+
+/* Footer Styles */
+footer {
+    margin-top: 3rem;
+    padding: 2rem 0;
+}
+
+footer.bg-dark {
+    background-color: #212529 !important;
+    color: white;
+}
+
+footer .text-muted {
+    color: #adb5bd !important;
+}
+
+footer a {
+    transition: color 0.2s ease;
+    color: #adb5bd;
+}
+
+footer a:hover {
+    color: white !important;
+    text-decoration: none;
+}
+
+footer hr.bg-secondary {
+    background-color: #6c757d !important;
+    opacity: 0.5;
+    margin: 1rem 0;
+}
+
+/* Button Enhancements */
+.btn-outline-success {
+    border-width: 2px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero-section .row {
+        flex-direction: column-reverse;
+    }
+    
+    .hero-section img {
+        margin-bottom: 2rem;
+        max-width: 100%;
+    }
+    
+    .contact-section {
+        margin-top: 2rem;
+    }
+}
+
+/* Animation Effects */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade {
+    animation: fadeIn 0.6s ease-out forwards;
+}
