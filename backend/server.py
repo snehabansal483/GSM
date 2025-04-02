@@ -1,10 +1,10 @@
 from flask import Flask, request, jsonify
 from backend.sql_connection import get_sql_connection
 import json
-import products_dao
-import orders_dao
-import uom_dao
-import user_dao
+from backend import products_dao
+from backend import orders_dao
+from backend import uom_dao
+from backend import user_dao
 import mysql.connector
 from flask_cors import CORS
 from dotenv import load_dotenv
