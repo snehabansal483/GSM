@@ -114,8 +114,8 @@ python app.py
 The application should now be running at [http://localhost:5000](http://localhost:5000).
 
 ### Screenshots  
-- **Login Page**
- ![Login](screenshots/login.png)
+- **Login Page**  
+  <img src="screenshots/login.png" alt="Login" width="400">  
 - **Dashboard**
  ![Dashboard](screenshots/dashboard.png)
 - **Product Management**
