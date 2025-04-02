@@ -1,7 +1,7 @@
 import datetime
 import jwt
 import mysql.connector
-from sql_connection import get_sql_connection
+from backend.sql_connection import get_sql_connection
 import hashlib
 
 SECRET_KEY = "sdfdjghkgjljalkgkdmgdasfbhnsbvbdavmbd"
