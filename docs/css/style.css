@@ -134,6 +134,27 @@ footer hr.bg-secondary {
 .btn-outline-success {
     border-width: 2px;
 }
+.demo-video {
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        background: #000;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+@media (min-width: 992px) {
+        .hero-section {
+            padding: 6rem 0;
+        }
+        
+        .demo-video {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .demo-video:hover {
+            transform: scale(1.02);
+            box-shadow: 0 30px 60px -10px rgba(0, 0, 0, 0.3);
+        }
+    }
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
