@@ -1,48 +1,71 @@
-# Grocery Management System
+# 🛒 Grocery Management System
 
-A full-stack web application for managing grocery store inventory, orders, and user accounts with Flask backend and Bootstrap frontend.
+A full-stack web application for managing grocery store inventory, orders, and user accounts — powered by a **Flask** backend and a **Bootstrap** frontend.
 
-## Features
+## 🚀 Demo
 
-- **User Authentication**:
-  - Secure user registration and login
-  - Session management
-- **Inventory Management**:
-  - View all products with details
-  - Add new products to inventory
-  - Remove products from system
-- **Order Processing**:
-  - Create new orders
-  - View all order history
-- **Unit of Measure Management**:
-  - Manage different measurement units for products
-- **Responsive Design**: Works on desktop and mobile devices
-- **REST API**: Complete CRUD operations via REST endpoints
+> **🎥 Click to watch the demo:**  
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=BBUFDguJK28" target="_blank">
+    <img src="https://github.com/snehabansal483/GSM/blob/main/screenshots/dashboard.png" alt="Watch the demo" style="width: 80%; max-width: 600px;" />
+  </a>
+</p>
 
-## Technologies Used
+---
 
-### Backend
-- Python Flask
-- MySQL
-- Flask-CORS
-- python-dotenv
+## ✨ Features
 
-### Frontend
-- HTML5
-- CSS3
-- Bootstrap 5
-- JavaScript
-- jQuery
+- 🔐 **User Authentication**  
+  - Secure user registration and login  
+  - Session management  
 
-### Database
-- MySQL
+- 📦 **Inventory Management**  
+  - View all products with details  
+  - Add new products to inventory  
+  - Remove products from system  
 
-### DevOps & Deployment  
-- **CI/CD:** GitHub Actions  
-- **Hosting & Deployment:**  
-  - Render (Backend Hosting)  
-  - Railway (Database Hosting)  
-  - Netlify (Frontend Hosting)
+- 📋 **Order Processing**  
+  - Create new orders  
+  - View all order history  
+
+- ⚖️ **Unit of Measure Management**  
+  - Manage different measurement units for products  
+
+- 📱 **Responsive Design**  
+  - Fully responsive and mobile-friendly  
+
+- 🔄 **REST API Support**  
+  - Complete CRUD operations via REST endpoints  
+
+---
+
+## 🛠️ Technologies Used
+
+### 🔧 Backend
+- 🐍 Python Flask  
+- 🐬 MySQL  
+- 🔄 Flask-CORS  
+- 🔐 python-dotenv  
+
+### 🎨 Frontend
+- 🌐 HTML5  
+- 🎨 CSS3  
+- 💠 Bootstrap 5  
+- ⚙️ JavaScript  
+- 💡 jQuery  
+
+### 🗄️ Database
+- 🐬 MySQL  
+
+### 🚀 DevOps & Deployment  
+- ⚙️ **CI/CD:** GitHub Actions  
+- ☁️ **Hosting & Deployment:**  
+  - 🔧 Render (Backend Hosting)  
+  - 🛤️ Railway (Database Hosting)  
+  - 🌐 Netlify (Frontend Hosting)  
+
+---
+
  
 ## Live Demo
 
